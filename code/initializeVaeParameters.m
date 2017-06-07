@@ -1,4 +1,4 @@
-function [ vae_theta ] = initializeVaeParameters(vae_preTrain,size_params)
+function [ vae_theta ] = initializeVaeParameters(size_params)
 
 % Initialize parameters randomly based on layer sizes.
 latentSize = size_params.latentSize;
@@ -59,53 +59,6 @@ vae_theta.Wcat2 = rand(catSize, hiddenSize) * 2 * r - r;
 vae_theta.bcat1 = zeros(hiddenSize, 1);
 vae_theta.bcat2 = zeros(catSize, 1);
 
-if ~isempty(vae_preTrain)
-    Wbparas = getW_vae(vae_preTrain, size_params);
-    
-    vae_theta.WencoV1Left = Wbparas.W1;
-    vae_theta.WencoV1Right = Wbparas.W2;
-    vae_theta.WencoV2 = Wbparas.W12;
-    vae_theta.bencoV1 = Wbparas.b1;
-    vae_theta.bencoV2 = Wbparas.b12;
-    
-    vae_theta.WdecoS1Left = Wbparas.W3;
-    vae_theta.WdecoS1Right = Wbparas.W4;
-    vae_theta.WdecoS2 = Wbparas.W34;
-    vae_theta.bdecoS2 = Wbparas.b34;
-    vae_theta.bdecoS1Left = Wbparas.b2;
-    vae_theta.bdecoS1Right = Wbparas.b3;
-    
-    vae_theta.WencoBox = Wbparas.We;
-    vae_theta.WdecoBox = Wbparas.Wd;
-    vae_theta.bencoBox = Wbparas.be;
-    vae_theta.bdecoBox = Wbparas.bd;
-    
-    vae_theta.WsymencoV1 = Wbparas.Wsym1;
-    vae_theta.WsymencoV2 = Wbparas.Wsym2;
-    vae_theta.WsymdecoS2 = Wbparas.Wsymd2;
-    vae_theta.WsymdecoS1 = Wbparas.Wsymd1;
-
-    vae_theta.bsymencoV1 = Wbparas.bsym1;
-    vae_theta.bsymencoV2 = Wbparas.bsym2;
-    vae_theta.bsymdecoS2 = Wbparas.bsymd2;
-    vae_theta.bsymdecoS1 = Wbparas.bsymd1;
-    
-    vae_theta.Wcat1 = Wbparas.Wcat1;
-    vae_theta.Wcat2 = Wbparas.Wcat2;
-    vae_theta.bcat1 = Wbparas.bcat1;
-    vae_theta.bcat2 = Wbparas.bcat2;
-    
-    vae_theta.Wranen1 = Wbparas.Wranen1;
-    vae_theta.Wranen2 = Wbparas.Wranen2;
-    vae_theta.branen1 = Wbparas.branen1;
-    vae_theta.branen2 = Wbparas.branen2;
-
-    vae_theta.Wrande2 = Wbparas.Wrande2;
-    vae_theta.Wrande1 = Wbparas.Wrande1;
-    vae_theta.brande2 = Wbparas.brande2;
-    vae_theta.brande1 = Wbparas.brande1;
-    
 end
 
-end
 
