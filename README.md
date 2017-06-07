@@ -28,7 +28,7 @@ Run trainTestVAEGAN.m to train the vae-gan model on the provided chair dataset.
 
 **Testing**
 
-Use test_demo.m to generate shapes based on trained model. There is already a pre-trained model inside. The generated shape structures could be visulized like this:
+Use test_demo.m to generate shapes based on trained model. There is already a pre-trained model inside. The generated shape structures could be visulized in matlab.
 
 
 For any questions, please contact Jun Li(jun.johnson.li@gmail.com) and Kai Xu(kevin.kai.xu@gmail.com).
