@@ -1,8 +1,10 @@
 # GRASS: Generative Recursive Autoencoders for Shape Structures
 
 By Jun Li, Kai Xu, Siddhartha Chaudhuri, Ersin Yumer, Hao Zhang, Leonidas Guibas
+
 This repository contains the pre-trained models for box structure generation, as well as the training/testing code for the generation model.
-Details of the work can be found here.
+
+Details of the work can be found [here](http://kevinkaixu.net/projects/grass.html)
 
 ## Citation
 
