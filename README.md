@@ -24,7 +24,7 @@ If you find our work useful in your research, please consider citing:
 
 **Training**
 
-Run trainTestVAEGAN.m to train the vae-gan model on the provided chair data set.
+Run trainTestVAEGAN.m to train the vae-gan model on the provided chair dataset.
 
 **Testing**
 
