@@ -13,8 +13,8 @@ alpha_cat = 0.2;
 funcTanh = @norm1tanh;
 funcTanh_prime = @norm1tanh_prime;
 
-vae_theta = initializeVaeParameters([],size_params);
-gan_thetaD = initializeGanParametersD([],size_params);
+vae_theta = initializeVaeParameters(size_params);
+gan_thetaD = initializeGanParametersD(size_params);
 data = trainingData.data;
 sampleNum = length(data);
 
