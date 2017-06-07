@@ -22,10 +22,12 @@ If you find our work useful in your research, please consider citing:
 
 ## Guide:
 
-Training:
+**Training**
+
 Run trainTestVAEGAN.m to train the vae-gan model on the provided chair data set.
 
-Testing:
+**Testing**
+
 Use test_demo.m to generate shapes based on trained model. There is already a pre-trained model inside. The generated shape structures could be visulized like this:
 
 
