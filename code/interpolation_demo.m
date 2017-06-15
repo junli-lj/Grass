@@ -1,4 +1,4 @@
-load('../model/samples.mat');
+load('../data/samples.mat');
 load('../model/vae_gan_preTrained.mat');
 
 addpath(genpath('../tools/'))
