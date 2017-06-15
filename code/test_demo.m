@@ -35,7 +35,7 @@ for ii = 1:num
         sm = softmax(Wcat2*sfm + bcat2);
         [~,l_index] = max(sm);
         if(l_index == 1)
-            re_box = WdecoBox*p+bdecoBox;
+            re_box = f(WdecoBox*p+bdecoBox);
             genShapes{ii}.boxes(:,count) = re_box;
             count = count+1;
             symfeature = symlist(:,1);
