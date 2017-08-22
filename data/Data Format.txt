@@ -1,0 +1,45 @@
+Data cell:
+
+boxes: oriented bounding boxes info for all components of a shape.
+
+symshapes: oriented bounding boxes info for the leaf nodes of the symmetry hierarchy tree.
+
+-------------------------------------------------------------------------------------------------------
+oriented bounding box format (12 entries):
+center: entries 1-3
+lengths(in each axis): entries 4-6
+axis 1: entries 7-9
+axis 2: entries 10-12
+(axis 3 could be computed as the cross product of axis 1 and axis 2.)
+-------------------------------------------------------------------------------------------------------
+
+
+treekids: (child_1, child_2, symmetry_or_adjacency). Leaf nodes (symshapes) must come first.
+treekids(i, 1) == 0, node i is a leaf node.
+treekids(i, 3) == 0, node i is an adjacency node. treekids(i, 1) and treekids(1, 2) are the indices of its two children.
+treekids(i, 3) == 1, node i is a symmetry node. treekids(i, 1) is its generator node. treekids(i, 2) is ignored.
+
+symparams: the parameters of symmetry nodes. If node i is a symmetry node, then symparams{treekids(i, 1)} are its symmetry parameters.
+when two nodes are merged and if they have the same symmetry (like two adjacent parts of an armrest, reflective symmetry), their parent node should also have this symmetry. 
+That's why it might happen more entries in symparams than symmetry nodes
+
+-------------------------------------------------------------------------------------------------------
+Symmetry parameter format (8 entries):
+entry 1 == -1, rotational symmetry
+number of repetitions: 1 / (entry 8)
+axis of rotation: entries 2-4
+point of rotation axis: entries 5-7
+
+entry 1 == 0, translational symmetry
+displacement vector: entries 2-4
+centroid of the last repetition of the generator node: entries 5-7
+The number of repetitions is computed as length(end_centroid - start_centroid) / length(displacement).
+entry 8 is unused (i.e. is 0).
+
+entry 1 == 1, reflectional symmetry
+the normal of the reflection plane: entries 2-4
+center of reflection: entries 5-7
+entry 8 is unused (i.e. is 0).
+-------------------------------------------------------------------------------------------------------
+
+*You may define your own format for your training data. We use this format as we observed it works stable for the training, there might have better ones.*
