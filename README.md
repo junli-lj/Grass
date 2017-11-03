@@ -6,6 +6,8 @@ This repository contains the pre-trained models for box structure generation, as
 
 Details of the work can be found [here](http://kevinkaixu.net/projects/grass.html).
 
+A PyTorch implementation (currently with only the VAE part) is available at: https://github.com/kevin-kaixu/grass_pytorch.
+
 ## Citation
 
 If you find our work useful in your research, please consider citing:
